@@ -1,0 +1,23 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: end-of-file-fixer
+        exclude: vendor/
+      - id: trailing-whitespace
+        exclude: vendor/
+      - id: check-added-large-files
+        args: [ --maxkb=1000 ]
+        exclude: vendor/
+      - id: check-merge-conflict
+        exclude: vendor/
+      - id: mixed-line-ending
+        exclude: vendor/
+      - id: check-case-conflict
+        exclude: vendor/
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.37.0
+    hooks:
+      - id: yamllint
+        exclude: vendor/
